@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'urls#index'
+  root to: 'urls#new'
   
   get 'urls/index'
 
-  get 'urls/create'
+  post '/', to: 'urls#create'
 
   get 'urls/show'
 
