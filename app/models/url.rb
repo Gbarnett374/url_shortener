@@ -1,10 +1,11 @@
 require 'digest'
 class Url < ApplicationRecord
-  validates :href, :url => true
-  before_save :add_protocol 
-  before_save :generate_shortened_href 
+  validates :href, url: true
+  before_save :add_protocol
+  before_save :generate_shortened_href
 
-  private 
+  private
+
   def add_protocol
     unless self.href.include?('http://') || self.href.include?('https://')
       self.href.prepend('http://')
