@@ -7,6 +7,7 @@
 2. Clone & cd into this repo then run `bundle install`.
 3. Create your database: `rake db:create`.
 4. Run the migrations: `rake db:migrate`.
-5. Run `rails s` to start the server. 
-6. Navigate to `localhost:3000` in your favorite web browser. 
-7. To run tests: `rspec`.
+5. Setup test database: `rake db:test:prepare`
+6. Run `rails s` to start the server. 
+7. Navigate to `localhost:3000` in your favorite web browser. 
+8. To run tests: `rspec`.
