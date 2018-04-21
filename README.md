@@ -1,6 +1,6 @@
 # Url Shortener 
 - This is a basic rails app that takes in a url and generates a shortened url. The returned shortened url will redirect you to the original url. 
-- Created using Rails 5.1.6, Ruby 2.4.1, & Postgres 9.6. 
+- Created using Rails 5.1.6, Ruby 2.4.1, & Postgres 9.6. Also using the Gem ([valid_url](https://github.com/ralovets/valid_url)) for url validation. 
 
 ## Getting Started 
 1. Please make sure you have Bundler & Postgresql installed. 
