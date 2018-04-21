@@ -1,4 +1,3 @@
-require 'pry'
 class Url < ApplicationRecord
   validates :href, :url => true
   before_save :generate_shortened_href 

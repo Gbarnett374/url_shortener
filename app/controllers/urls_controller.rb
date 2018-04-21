@@ -1,7 +1,5 @@
-require 'pry'
 class UrlsController < ApplicationController
   def show
-    # binding.pry
     @url = Url.find(params[:url_id])
     @url_short = "#{root_url}#{@url.shortened_href}" 
   end
@@ -21,7 +19,7 @@ class UrlsController < ApplicationController
 
   def redirect 
     @url = Url.find_by(shortened_href: params[:shortened_href])
-    redirect_to "http://#{@url.href}"
+    redirect_to("http://#{@url.href}")
   end
   
   private 
