@@ -1,6 +1,6 @@
 class UrlsController < ApplicationController
   def show
-    @url = Url.find(params[:url_id])
+    @url = Url.find(params[:id])
     @url_short = "#{root_url}#{@url.shortened_href}" 
   end
 
@@ -11,7 +11,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new(url_params)
     if @url.save
-      redirect_to urls_show_path(url_id: @url)
+      redirect_to @url
     else
       render :new 
     end
@@ -19,7 +19,7 @@ class UrlsController < ApplicationController
 
   def redirect 
     @url = Url.find_by(shortened_href: params[:shortened_href])
-    redirect_to("http://#{@url.href}")
+    redirect_to(@url.href)
   end
   
   private 
