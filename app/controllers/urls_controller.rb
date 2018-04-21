@@ -1,18 +1,27 @@
+require 'pry'
 class UrlsController < ApplicationController
+  def show
+    # binding.pry
+    @url = Url.find(params[:url_id])
+    @url_short = "#{root_url}#{@url.shortened_href}" 
+  end
+
+  def new
+    @url = Url.new
+  end
+
   def create
     @url = Url.new(url_params)
     if @url.save
-      # redirect ot showing 
+      redirect_to urls_show_path(url_id: @url)
     else
       render :new 
     end
   end
 
-  def show
-  end
-
-  def new
-    @url = Url.new
+  def redirect 
+    @url = Url.find_by(shortened_href: params[:shortened_href])
+    redirect_to "http://#{@url.href}"
   end
   
   private 
