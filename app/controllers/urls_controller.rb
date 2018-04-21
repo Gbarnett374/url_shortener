@@ -1,7 +1,8 @@
 class UrlsController < ApplicationController
   def show
     @url = Url.find(params[:id])
-    @url_short = "#{root_url}#{@url.shortened_href}" 
+    # A complete url with the shortened href
+    @complete_shortened_url = "#{root_url}#{@url.shortened_href}" 
   end
 
   def new
